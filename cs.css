@@ -56,8 +56,9 @@ main {
 /* Centered Container */
 .sim {
     margin: 20px auto;
-    max-width: 900px;
+    max-width: 850px;
     padding: 20px;
+    
     background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -79,14 +80,14 @@ section {
     .section {
       flex-direction: row; /* Two columns on larger screens */
     }
-    .section .content, .section .image {
+    .section .content, .section  {
       flex: 1;
       padding: 20px;
     }
   }
 
 section:hover {
-    transform: scale(1.02);
+    transform: scale(1.06);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
@@ -109,15 +110,13 @@ h2 {
 /* Adjusted Image Styling */
 img {
     max-width: 15%; /* Keep image small */
-    height: auto;
-    border-radius: 45%; /* Keep circular shape */
-    /* float: left; Align image to the left */
-    margin: 20px 20px 20px 0; /* Add spacing around the image */
+    border-radius: 45%; /* Keep circular shape */ 
+    margin: 20px 20px 20px 0;/* Add spacing around the image*/
     transition: transform 0.3s ease; /* Optional hover effect */
 }
 
 img:hover {
-    transform: scale(1.05); /* Slight enlargement on hover */
+    transform: scale(1.15); /* Slight enlargement on hover */
 }
 
 
