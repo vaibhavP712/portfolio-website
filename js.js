@@ -1,7 +1,7 @@
 const API_BASE_URL = 'https://portfoliobackend-k2gr.onrender.com'; // Base URL for the backend
 
 // Handle form submission to post a new comment
-document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+document.getElementById('feedbackForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const name = document.getElementById('name').value;
@@ -13,20 +13,20 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, message: comment })  // Adjust to match the backend schema
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Comment saved:', data);
+        .then(response => response.json())
+        .then(data => {
+            console.log('Comment saved:', data);
 
-        // Display the new comment on the page
-        const commentsList = document.getElementById('commentsList');
-        const newComment = document.createElement('li');
-        newComment.innerHTML = `<strong>${data.name}</strong>: ${data.message}`;
-        commentsList.appendChild(newComment);
+            // Display the new comment on the page
+            const commentsList = document.getElementById('commentsList');
+            const newComment = document.createElement('li');
+            newComment.innerHTML = `<strong>${data.name}</strong>: ${data.message}`;
+            commentsList.appendChild(newComment);
 
-        // Clear the form
-        document.getElementById('feedbackForm').reset();
-    })
-    .catch(error => console.error('Error saving comment:', error));
+            // Clear the form
+            document.getElementById('feedbackForm').reset();
+        })
+        .catch(error => console.error('Error saving comment:', error));
 });
 
 // Fetch and display all comments from the backend
@@ -50,7 +50,7 @@ function loadComments() {
 document.addEventListener('DOMContentLoaded', loadComments);
 
 // Optional scroll effect
-document.addEventListener('scroll', function() {
+document.addEventListener('scroll', function () {
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => {
         const rect = el.getBoundingClientRect();
